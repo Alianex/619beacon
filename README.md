@@ -7,6 +7,7 @@ This app replaces the default starter screen with a **619 Beacon blueprint dashb
 - **Microservice architecture** (owners, capabilities, implementation focus)
 - **Canonical data model** (domains, entities, contracts)
 - **Automation playbooks** (triggers, systems, outcomes)
+- **Platform principles + delivery risk register** (design guardrails and mitigations)
 - **Execution roadmap** (30-day delivery horizons)
 
 The screen is driven by typed local data in `blueprintData.ts`, making it straightforward to swap in an API-backed source later.
@@ -42,15 +43,19 @@ npm run preview
 This is a Vite static app, so deploy the `dist/` output from `npm run build` to any static host.
 
 ### Option 1: Vercel
+Repository includes `vercel.json` with the build/output defaults.
+
 1. Import the repository into Vercel.
-2. Use:
+2. Confirm:
    - **Build command:** `npm run build`
    - **Output directory:** `dist`
 3. Deploy.
 
 ### Option 2: Netlify
+Repository includes `netlify.toml` with the build/publish defaults.
+
 1. Create a new site from this repository.
-2. Use:
+2. Confirm:
    - **Build command:** `npm run build`
    - **Publish directory:** `dist`
 3. Deploy.

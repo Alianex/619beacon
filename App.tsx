@@ -11,6 +11,24 @@ const App: React.FC = () => {
           This implementation blueprint translates architecture strategy into concrete services,
           canonical data contracts, automation playbooks, and an execution roadmap that teams can ship.
         </p>
+        <div className="kpi-row" aria-label="Blueprint section counts">
+          <div className="kpi-card">
+            <span>Microservices</span>
+            <strong>{blueprintData.microservices.length}</strong>
+          </div>
+          <div className="kpi-card">
+            <span>Data domains</span>
+            <strong>{blueprintData.dataModel.length}</strong>
+          </div>
+          <div className="kpi-card">
+            <span>Playbooks</span>
+            <strong>{blueprintData.automationPlaybooks.length}</strong>
+          </div>
+          <div className="kpi-card">
+            <span>Roadmap phases</span>
+            <strong>{blueprintData.executionRoadmap.length}</strong>
+          </div>
+        </div>
       </header>
 
       <main className="dashboard-grid">
@@ -76,6 +94,37 @@ const App: React.FC = () => {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="panel split-panel">
+          <article>
+            <div className="panel-heading">
+              <h2>Platform Principles</h2>
+            </div>
+            <ul className="stacked-list">
+              {blueprintData.platformPrinciples.map((principle) => (
+                <li key={principle.title}>
+                  <strong>{principle.title}</strong>
+                  <p>{principle.detail}</p>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article>
+            <div className="panel-heading">
+              <h2>Delivery Risks & Mitigations</h2>
+            </div>
+            <ul className="stacked-list">
+              {blueprintData.deliveryRisks.map((risk) => (
+                <li key={risk.risk}>
+                  <strong>{risk.risk}</strong>
+                  <p>{risk.mitigation}</p>
+                  <p className="card-meta">Owner: {risk.owner}</p>
+                </li>
+              ))}
+            </ul>
+          </article>
         </section>
 
         <aside className="roadmap-panel">

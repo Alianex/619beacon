@@ -178,8 +178,71 @@ ul {
 
   .roadmap-panel {
     grid-column: 2;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 4;
     position: sticky;
     top: 1.25rem;
   }
+
+  .split-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+.kpi-row {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.6rem;
+}
+
+.kpi-card {
+  background: rgba(15, 33, 66, 0.66);
+  border: 1px solid rgba(159, 189, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+}
+
+.kpi-card span {
+  display: block;
+  color: #b8cff8;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kpi-card strong {
+  color: #f7fbff;
+  font-size: 1.25rem;
+}
+
+.split-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.stacked-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stacked-list li {
+  background: rgba(23, 38, 71, 0.55);
+  border: 1px solid rgba(159, 189, 255, 0.14);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.stacked-list strong {
+  color: #e9f2ff;
+}
+
+.stacked-list p {
+  margin-top: 0.35rem;
+  color: #c0d3f3;
+  font-size: 0.9rem;
 }
