@@ -1,39 +1,64 @@
 # 619 Beacon Blueprint UI
 
-This project now ships a focused **619 Beacon blueprint dashboard** instead of the default starter counter screen. The app frames platform strategy as implementation-ready sections that engineering and operations teams can execute against immediately.
+This app replaces the default starter screen with a **619 Beacon blueprint dashboard** that turns platform strategy into implementation-ready execution sections.
 
-## What the app presents
+## Blueprint sections in the UI
 
-- **Microservice architecture** with ownership, capabilities, and implementation focus.
-- **Canonical data model** domains with entities and contract constraints.
-- **Automation playbooks** that define triggers, systems, and outcomes.
-- **Execution roadmap** organized into 30-day delivery horizons.
+- **Microservice architecture** (owners, capabilities, implementation focus)
+- **Canonical data model** (domains, entities, contracts)
+- **Automation playbooks** (triggers, systems, outcomes)
+- **Execution roadmap** (30-day delivery horizons)
 
-The content currently comes from a typed local data source (`blueprintData.ts`) so it is easy to evolve and swap with API-backed data later.
+The screen is driven by typed local data in `blueprintData.ts`, making it straightforward to swap in an API-backed source later.
 
-## Local development
+## Run locally
 
 ### Prerequisites
 - Node.js 18+
+- npm 9+
 
-### Commands
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the dev server:
-   ```bash
-   npm run dev
-   ```
-3. Build for production:
-   ```bash
-   npm run build
-   ```
-4. Preview the production build locally:
-   ```bash
-   npm run preview
-   ```
+### Install
+```bash
+npm install
+```
+
+### Start development server
+```bash
+npm run dev
+```
+
+### Build production assets
+```bash
+npm run build
+```
+
+### Preview production build
+```bash
+npm run preview
+```
+
+## Deploy
+
+This is a Vite static app, so deploy the `dist/` output from `npm run build` to any static host.
+
+### Option 1: Vercel
+1. Import the repository into Vercel.
+2. Use:
+   - **Build command:** `npm run build`
+   - **Output directory:** `dist`
+3. Deploy.
+
+### Option 2: Netlify
+1. Create a new site from this repository.
+2. Use:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+3. Deploy.
+
+### Option 3: GitHub Pages (manual artifact)
+1. Run `npm run build`.
+2. Publish the contents of `dist/` to your Pages target branch/folder.
 
 ## Immediate next engineering milestone
 
-Implement a read-only blueprint API endpoint (or mock service adapter) and wire the UI to consume it via a typed client. This keeps the dashboard visuals stable while beginning the migration from static content to environment-specific platform data.
+Add a read-only blueprint API endpoint (or adapter) and replace the static `blueprintData` import with a typed fetch client while preserving the same UI contract.
