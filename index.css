@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -48,6 +52,23 @@ ul {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
 }
 
+.hero-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.status-pill {
+  font-size: 0.75rem;
+  color: #dff4d8;
+  background: rgba(50, 123, 62, 0.45);
+  border: 1px solid rgba(140, 224, 152, 0.65);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  white-space: nowrap;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -60,12 +81,34 @@ ul {
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   color: #f5f9ff;
   line-height: 1.2;
+  margin-top: 0.35rem;
 }
 
 .hero-copy {
   margin-top: 0.75rem;
   max-width: 70ch;
   color: #d7e7ff;
+}
+
+.quick-nav {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quick-nav a {
+  color: #edf4ff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  background: rgba(16, 41, 84, 0.55);
+  border: 1px solid rgba(173, 199, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+}
+
+.quick-nav a:hover {
+  background: rgba(26, 57, 110, 0.8);
 }
 
 .dashboard-grid {
@@ -92,6 +135,15 @@ ul {
   font-size: 1.3rem;
 }
 
+.subheading {
+  margin-top: 1rem;
+  margin-bottom: 0.65rem;
+  color: #cce0ff;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -106,6 +158,12 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.blueprint-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(180, 207, 255, 0.45);
 }
 
 .blueprint-card h3 {
@@ -117,13 +175,6 @@ ul {
 .blueprint-card li {
   color: #c0d3f3;
   font-size: 0.92rem;
-}
-
-.section-label {
-  color: #a4c1f8;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 .card-meta {
@@ -140,6 +191,11 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+}
+
+.roadmap-intro {
+  color: #c8daf8;
+  font-size: 0.9rem;
 }
 
 .roadmap-item {
@@ -166,19 +222,28 @@ ul {
   font-size: 0.9rem;
 }
 
+.mandate-list {
+  margin-top: 0.25rem;
+}
+
+.mandate-list li {
+  color: #d4e4ff;
+  border-color: rgba(120, 212, 166, 0.35);
+}
+
 @media (min-width: 960px) {
   .dashboard-grid {
     grid-template-columns: 2fr 1fr;
     align-items: start;
   }
 
-  .panel:nth-child(-n + 3) {
+  .panel:nth-child(-n + 6) {
     grid-column: 1;
   }
 
   .roadmap-panel {
     grid-column: 2;
-    grid-row: 1 / span 4;
+    grid-row: 1 / span 6;
     position: sticky;
     top: 1.25rem;
   }
@@ -187,7 +252,6 @@ ul {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 
 .kpi-row {
   margin-top: 1rem;
